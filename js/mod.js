@@ -2,27 +2,28 @@ let modInfo = {
 	name: "The IQ tree",
 	id: "e",
 	author: "Temtyy",
-	pointsName: "IQ",
+	pointsName: "learning points",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (5), // Used for hard resets and new players
+	offlineLimit: 24,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "v0.0.0.0.0.1 (in here is the endgame goal!!!)",
+	name: "Literally nothing (I agree with the default text)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+	<h3>v0.0.0.0.0.1 (in here is the endgame goal!!!)</h3><br>
+		- Actually adding something.<br>
+		- amogus.<br>
+		- The endgame is 1e30.`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `Congratulations! You have reached the end and beaten this game, but for now... wait.`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -42,7 +43,15 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1)
+	let gain = new Decimal(0)
+	if (hasUpgrade('i', 11)) gain = gain.add(1)
+	if (hasUpgrade('i', 12)) gain = gain.times(2)
+	if (hasUpgrade('i', 13)) gain = gain.times(upgradeEffect('i', 13))
+	if (hasUpgrade('i', 21)) gain = gain.times(2)
+	if (hasUpgrade('i', 22)) gain = gain.times(2)
+	if (hasUpgrade('s', 11)) gain = gain.times(5)
+	if (hasUpgrade('s', 13)) gain = gain.times(upgradeEffect('s', 13))
+	if (hasUpgrade('i', 32)) gain = gain.times(gain)
 	return gain
 }
 
@@ -56,7 +65,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.points.gte(new Decimal("e30"))
 }
 
 
