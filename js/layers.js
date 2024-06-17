@@ -1,3 +1,4 @@
+addLayer("i", {
     name: "iq", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "IQ", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -30,6 +31,14 @@
         {key: "i", description: "I: Reset for IQ", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    infoboxes: {
+        not_lore: {
+            title: "Importatn!!111!one!!",
+            body() { return `<h1>Read this before playing!</h1><br>
+                <h3>This game is definetely not finished, so expect not balanced layers!<br><br><br><br><br><br><br>
+                oh btw current end is 1e30` },
+        },
+    },
     upgrades: {
         11: {
             title: "Learn",

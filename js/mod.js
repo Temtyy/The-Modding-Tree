@@ -13,15 +13,14 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "v0.0.0.0.0.1 (in here is the endgame goal!!!)",
+	num: "0.0.0.0.0.1",
 	name: "Literally nothing (I agree with the default text)",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0.0.0.0.1 (in here is the endgame goal!!!)</h3><br>
+	<h3>v0.0.0.0.0.1</h3><br>
 		- Actually adding something.<br>
-		- amogus.<br>
-		- The endgame is 1e30.`
+		- amogus.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now... wait.`
 
